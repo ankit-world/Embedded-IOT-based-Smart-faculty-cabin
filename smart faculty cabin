@@ -1,0 +1,286 @@
+#include<LiquidCrystal.h>
+LiquidCrystal lcd(12,9,1,2,3,4);
+#define LCD_LIGHT_PIN A4
+const int buttonPin1=7;
+const int buttonPin2=8;
+const int buttonPin3=10;
+const int buttonPin4=13;
+const int buttonPin5=5;
+int buttonState1=0;
+int buttonState2=0;
+int buttonState3=0;
+int buttonState4=0;
+int buttonState5=0;
+int c;
+unsigned long last=0;
+int one=60000;
+
+void setup() {
+  lcd.begin(16,4);
+  lcd.noDisplay();
+  pinMode(11,OUTPUT);
+  pinMode(buttonPin1,INPUT);
+  pinMode(buttonPin2,INPUT);
+  pinMode(buttonPin3,INPUT);
+  pinMode(buttonPin4,INPUT);
+  pinMode(buttonPin5,INPUT);
+  pinMode(LCD_LIGHT_PIN,OUTPUT);
+  pinMode(A0,INPUT);
+  lcd.clear();
+}
+
+void loop() {
+  buttonState1 = digitalRead(buttonPin1);
+  buttonState2 = digitalRead(buttonPin2);
+  buttonState3 = digitalRead(buttonPin3);
+  buttonState4 = digitalRead(buttonPin4);
+  buttonState5 = digitalRead(buttonPin5);
+     if(buttonState1 == HIGH){
+    lcd.begin(16,4);
+    digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+    lcd.setCursor(0,0);
+    lcd.println("GOOD MORNING    ");
+    lcd.setCursor(0,1);
+    lcd.println("HAVE A NICE DAY ");
+    lcd.setCursor(0,2);
+    lcd.println("                ");
+    lcd.setCursor(0,3);
+    lcd.println("                ");
+   delay(10000);
+    digitalWrite(LCD_LIGHT_PIN, LOW);
+    lcd.noDisplay();
+    last=millis();
+  while((millis())-last<one){
+     lcd.clear();
+     lcd.setCursor(0,0);
+     lcd.println("    WELCOME     ");
+     lcd.setCursor(0,1);
+     lcd.println("    MONDAY      ");
+         lcd.setCursor(0,3);
+    lcd.println("     busy        ");
+     lcd.setCursor(0,2);
+     lcd.println("lec1,T-20_9-10  ");  
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec3,T-21_11-12 ");
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec 7,T-22_4-5  ");
+     delay(2000);    
+    c=digitalRead(A0);
+    if(c==HIGH){ digitalWrite(11,HIGH);
+    lcd.begin(16,4);
+    lcd.clear();
+       digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+ }  
+ else{digitalWrite(11,LOW); 
+  lcd.begin(16,4);
+    lcd.clear();
+  lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+  }}lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+  digitalWrite(11,HIGH);}
+   else if(buttonState2 == HIGH){
+    lcd.begin(16,4);
+    lcd.clear();
+    digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+    lcd.setCursor(0,0);
+    lcd.println("GOOD MORNING    ");
+    lcd.setCursor(0,1);
+    lcd.println("HAVE A NICE DAY ");
+    lcd.setCursor(0,2);
+    lcd.println("                ");
+    lcd.setCursor(0,3);
+    lcd.println("                ");
+   delay(10000);
+    digitalWrite(LCD_LIGHT_PIN, LOW);
+    lcd.noDisplay();
+    last=millis();
+  while((millis())-last<one){
+     lcd.clear();
+     lcd.setCursor(0,0);
+     lcd.println("    WELCOME     ");
+     lcd.setCursor(0,1);
+     lcd.println("    TUESDAY      ");
+         lcd.setCursor(0,3);
+    lcd.println("     busy        ");
+     lcd.setCursor(0,2);
+     lcd.println("lec1,T-20_9-10  ");    
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec5,T-21_11-12 ");
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec 6,T-22_4-5 ");
+     delay(2000);    
+    c=digitalRead(A0);
+    if(c==HIGH){ digitalWrite(11,HIGH);
+    lcd.begin(16,4);
+    lcd.clear();
+       digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+  }  
+ else{digitalWrite(11,LOW); 
+  lcd.begin(16,4);
+    lcd.clear();
+  lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+  }}
+  lcd.noDisplay();
+  digitalWrite(LCD_LIGHT_PIN, LOW);
+  digitalWrite(11,HIGH);}   
+ else if(buttonState3 == HIGH){
+  lcd.begin(16,4);
+    lcd.clear();
+    digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+    lcd.setCursor(0,0);
+    lcd.println("GOOD MORNING    ");
+    lcd.setCursor(0,1);
+    lcd.println("HAVE A NICE DAY ");
+    lcd.setCursor(0,2);
+    lcd.println("                ");
+    lcd.setCursor(0,3);
+    lcd.println("                ");
+   delay(10000);
+    digitalWrite(LCD_LIGHT_PIN, LOW);
+    lcd.noDisplay();
+    last=millis();
+  while((millis())-last<one){
+     lcd.clear();
+     lcd.setCursor(0,0);
+     lcd.println("    WELCOME     ");
+     lcd.setCursor(0,1);
+     lcd.println("    WEDNESDAY     ");
+         lcd.setCursor(0,3);
+    lcd.println("     busy        ");
+     lcd.setCursor(0,2);
+     lcd.println("lec2,T-20_9-10  ");     
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec3,T-21_11-12 ");
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec 7,T-22_4-5 ");
+     delay(2000);    
+    c=digitalRead(A0);
+    if(c==HIGH){ 
+    digitalWrite(11,HIGH);   
+    lcd.begin(16,4);
+    lcd.clear();
+       digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+}  
+ else{digitalWrite(11,LOW); 
+  lcd.begin(16,4);
+    lcd.clear();
+  lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+ 
+  }}lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+  digitalWrite(11,HIGH);}
+ else if(buttonState4 == HIGH){
+  lcd.begin(16,4);
+    lcd.clear();
+    digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+    lcd.setCursor(0,0);
+    lcd.println("GOOD MORNING    ");
+    lcd.setCursor(0,1);
+    lcd.println("HAVE A NICE DAY ");
+    lcd.setCursor(0,2);
+    lcd.println("                ");
+    lcd.setCursor(0,3);
+    lcd.println("                ");
+   delay(10000);
+    digitalWrite(LCD_LIGHT_PIN, LOW);
+    lcd.noDisplay();
+    last=millis();
+  while((millis())-last<one){
+     lcd.clear();
+     lcd.setCursor(0,0);
+     lcd.println("    WELCOME     ");
+     lcd.setCursor(0,1);
+     lcd.println("    THURSDAY    ");
+         lcd.setCursor(0,3);
+    lcd.println("     busy        ");
+     lcd.setCursor(0,2);
+     lcd.println("lec1,T-20_9-10  ");
+     
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec3,T-21_11-12 ");
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec 5,T-22_4-5 ");
+     delay(2000);   
+    c=digitalRead(A0);
+    if(c==HIGH){ digitalWrite(11,HIGH);
+    lcd.begin(16,4);
+    lcd.clear();
+       digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();}  
+ else{digitalWrite(11,LOW); 
+  lcd.begin(16,4);
+    lcd.clear();
+  lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+  }}
+  lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+  digitalWrite(11,HIGH);}
+ else if(buttonState5 == HIGH){
+  lcd.begin(16,4);
+    lcd.clear();
+    digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+    lcd.setCursor(0,0);
+    lcd.println("GOOD MORNING    ");
+    lcd.setCursor(0,1);
+    lcd.println("HAVE A NICE DAY ");
+    lcd.setCursor(0,2);
+    lcd.println("                ");
+    lcd.setCursor(0,3);
+    lcd.println("                ");
+   delay(10000);
+    digitalWrite(LCD_LIGHT_PIN, LOW);
+    lcd.noDisplay();
+    last=millis();
+  while((millis())-last<one){
+     lcd.clear();
+     lcd.setCursor(0,0);
+     lcd.println("    WELCOME     ");
+     lcd.setCursor(0,1);
+     lcd.println("    FRIDAY      ");
+         lcd.setCursor(0,3);
+    lcd.println("     busy        ");
+     lcd.setCursor(0,2);
+     lcd.println("lec1,T-20_9-10  ");     
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec2,T-21_11-12 ");
+     delay(2000);
+     lcd.setCursor(0,2);
+     lcd.println("lec 3,T-22_4-5  ");
+     delay(2000);    
+    c=digitalRead(A0);
+    if(c==HIGH){ digitalWrite(11,HIGH);
+    lcd.begin(16,4);
+    lcd.clear();
+       digitalWrite(LCD_LIGHT_PIN, HIGH);
+    lcd.display();
+    }  
+ else{digitalWrite(11,LOW); 
+  lcd.begin(16,4);
+    lcd.clear();
+  lcd.noDisplay();
+ digitalWrite(LCD_LIGHT_PIN, LOW);
+   }}
+  lcd.noDisplay();
+  digitalWrite(LCD_LIGHT_PIN, LOW);
+  digitalWrite(11,HIGH);}}
