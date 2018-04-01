@@ -1,0 +1,3 @@
+1.Automation of electrical appliances of cabin if left open via sensing the presence and absence of the faculty inside the cabin and switching accordingly which saves power.
+2.Displaying schedule of the faculty outside the cabin using LCD of every particular day of the week with morning and evening wishes everyday. The LCD will only display the schedule when the room is locked otherwise it will be off, this take place using sensor.
+3.Electronic notice board in which any important/quick instruction will be displayed on the LCD outside, by the faculty by just giving voice commands over the smart phone using an app.
